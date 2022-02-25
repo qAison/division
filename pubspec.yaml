@@ -1,6 +1,7 @@
 name: division
 description: Simple to use yet powerfull style widgets with syntax inspired by CSS.
-version: 0.8.6
+version: 0.8.8
+
 homepage:
 
 environment:

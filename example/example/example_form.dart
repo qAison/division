@@ -45,6 +45,7 @@ class _TestState extends State<Test> {
     ..bold()
     ..ripple(true, splashColor: Colors.white.withOpacity(0.1))
     ..alignment.centerLeft()
+    ..textAlign.center()
     ..width(150)
     ..background.color(Colors.blue)
     ..borderRadius(all: 10)
@@ -63,14 +64,12 @@ class _TestState extends State<Test> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        // Title
         Txt('Login', style: titleStyle),
-
-        // Username field
         Txt(
           '',
           style: inputFieldStyle(_isUsernameFieldActive, inputFieldActiveStyle)
             ..editable(
+              autoFocus: true,
               placeholder: 'enter username',
               onFocusChange: (hasFocus) {
                 if (hasFocus != _isUsernameFieldActive)
@@ -78,8 +77,6 @@ class _TestState extends State<Test> {
               },
             ),
         ),
-
-        // Password field
         Txt(
           '',
           style: inputFieldStyle(_isPasswordFieldActive, inputFieldActiveStyle)
@@ -92,9 +89,7 @@ class _TestState extends State<Test> {
               },
             ),
         ),
-
-        // Submit button
-        Txt('Submit', style: submitButtonStyle)
+        Txt('Submit', style: submitButtonStyle),
       ],
     );
   }

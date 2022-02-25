@@ -1,7 +1,9 @@
 # Division
-<a href="https://pub.dev/packages/division"><img src="https://img.shields.io/pub/v/division?color=blue&label=division" /></a>
-
+<a href="https://pub.dev/packages/division"><img src="https://img.shields.io/pub/v/division?color=blue&label=division" /></a><br />
+<a href="https://www.buymeacoffee.com/tOTWBs7"><img src="https://camo.githubusercontent.com/be06971baed9105260e0ed5c03746108c30b527f/68747470733a2f2f63646e2e6275796d6561636f666665652e636f6d2f627574746f6e732f64656661756c742d6f72616e67652e706e67" alt="Buy Me A Coffee" data-canonical-src="https://cdn.buymeacoffee.com/buttons/default-orange.png" width="150px" /></a>
 > Simple to use yet powerfull style widgets with syntax inspired by CSS.
+
+### Please check out [styled_widget](https://github.com/ReinBentdal/styled_widget) which is a replacement of Division!
 
 The true power of this package is a combination of its features. Flutter widgets are designed to combine both the styling widgets and the structural widgets together when building apps. This package tries to decouple style from structure. This results in much more readable code. Another strong point of this package is the ease of animations. 
 
@@ -27,14 +29,14 @@ This is the two main widgets included in Division
 Parent(
   child: Widget,
   style: ParentStyle, 
-  gesture: GestureClass,
+  gesture: Gestures,
 );
 ```
 ```dart
 Txt(
   String,
   style: TxtStyle,
-  gesture: GestureClass,
+  gesture: Gestures,
 );
 ```
 
@@ -179,6 +181,15 @@ The widget alignment
 </details>
 
 <details>
+  <summary>Background blend mode</summary>
+
+  ```dart
+  ..background.blendMode(BlendMode blendMode)
+  ```
+  Algorithms for blending background
+</details>
+
+<details>
   <summary>Linear gradient</summary>
 
   ```dart
@@ -259,6 +270,17 @@ The widget alignment
         double bottomRight})
   ```
   It is valid to use `all` together with single sided properties. Single sided properties will trump over the `all` property.
+
+  See also [circle] for creating circular widgets.
+</details>
+
+<details>
+  <summary>Circle</summary>
+
+  ```dart
+  ..circle([bool enable = true])
+  ```
+  Makes the widget circular
 </details>
 
 <details>
@@ -349,7 +371,7 @@ The widget alignment
 ```dart
 Parent(
   style: ParentStyle,
-  gesture: GestureClass,
+  gesture: Gestures,
   child: Widget
 )
 ```
@@ -390,7 +412,7 @@ ParentStyle()
 Txt(
   String,
   style: TxtStyle,
-  gesture: GestureClass,
+  gesture: Gestures,
 )
 ```
 As the name suggests this widget is a simple styled widget which takes a `String` as its child.
@@ -500,6 +522,27 @@ TxtStyle()
 
   ```dart
   ..textDecoration(TextDecoration decoration)
+  ```
+</details>
+
+<details>
+  <summary>Text shadow</summary>
+
+  ```dart
+  ..textShadow({Color color = const Color(0x33000000),
+      double blur = 0.0,
+      Offset offset = Offset.zero})
+  ```
+</details>
+
+<details>
+  <summary>Text elevation</summary>
+
+  ```dart
+  ..textElevation(double elevation,
+      {double angle = 0.0,
+      Color color = const Color(0x33000000),
+      double opacity = 1.0})
   ```
 </details>
 
