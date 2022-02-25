@@ -1,3 +1,6 @@
+## 0.9.0
+* Null safety
+
 ## 0.8.8
 * Added `autoFocus` parameter to the `editable` method in `TxtStyle`
 * Added `textOverflow` method to `TxtStyle`
