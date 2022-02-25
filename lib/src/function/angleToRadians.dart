@@ -3,15 +3,11 @@ import 'dart:math';
 import '../style.dart';
 
 double angleToRadians(double value, AngleFormat angleFormat) {
-  switch (angleFormat) {
-    case AngleFormat.radians:
-      break;
-    case AngleFormat.cycles:
-      value = value * 2 * pi;
-      break;
-    case AngleFormat.degree:
-      value = (value / 360) * 2 * pi;
-      break;
-  }
-  return value;
+  if (angleFormat == AngleFormat.radians)
+    return value;
+  else if (angleFormat == AngleFormat.cycles)
+    return value * 2 * pi;
+  else if (angleFormat == AngleFormat.degree) return (value / 360) * 2 * pi;
+
+  return null;
 }

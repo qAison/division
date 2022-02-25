@@ -31,7 +31,7 @@ class _TestState extends State<Test> {
     ..margin(horizontal: 50, vertical: 10)
     ..borderRadius(all: 10)
     ..alignment.center()
-    ..background.color(Colors.grey[200]!)
+    ..background.color(Colors.grey[200])
     ..animate(300, Curves.easeOut)
     ..add(isActive ? activeStyle : null, override: true);
 
@@ -45,7 +45,6 @@ class _TestState extends State<Test> {
     ..bold()
     ..ripple(true, splashColor: Colors.white.withOpacity(0.1))
     ..alignment.centerLeft()
-    ..textAlign.center()
     ..width(150)
     ..background.color(Colors.blue)
     ..borderRadius(all: 10)
@@ -64,20 +63,23 @@ class _TestState extends State<Test> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
+        // Title
         Txt('Login', style: titleStyle),
+
+        // Username field
         Txt(
           '',
           style: inputFieldStyle(_isUsernameFieldActive, inputFieldActiveStyle)
             ..editable(
-              autoFocus: true,
               placeholder: 'enter username',
               onFocusChange: (hasFocus) {
                 if (hasFocus != _isUsernameFieldActive)
-                  setState(() => _isUsernameFieldActive =
-                      hasFocus ?? _isUsernameFieldActive);
+                  setState(() => _isUsernameFieldActive = hasFocus);
               },
             ),
         ),
+
+        // Password field
         Txt(
           '',
           style: inputFieldStyle(_isPasswordFieldActive, inputFieldActiveStyle)
@@ -86,12 +88,13 @@ class _TestState extends State<Test> {
               obscureText: true,
               onFocusChange: (hasFocus) {
                 if (hasFocus != _isPasswordFieldActive)
-                  setState(() => _isPasswordFieldActive =
-                      hasFocus ?? _isPasswordFieldActive);
+                  setState(() => _isPasswordFieldActive = hasFocus);
               },
             ),
         ),
-        Txt('Submit', style: submitButtonStyle),
+
+        // Submit button
+        Txt('Submit', style: submitButtonStyle)
       ],
     );
   }
